@@ -8,38 +8,17 @@ host = sys.argv[1]
 port = sys.argv[2]
 s = socket.socket(socket.AF_INTER, socket.SOCK_STREAM)
 
-def isOpen:
-    try:
-        s.settimeout(1)
-
-        result = s.connect_ex((host, port))
-
-        if result == 0:    
-            print(f"Successfully connected to {host}:{port}. Port is open")
-            return True
-        else:
-            print("Error: Port is currently in use or unreachable. Error code: {result}")
-            return False
-    except socket.error:
-        print(f"Socket error: {socket.error}")
-        return False
-##isOpen END
+##Missing the connection to server with big number port implementation
 
 def main:
-    if not 49152 <= port <= 65535:
-        print("Error: Port must be between 49152 and 65535")
-        sys.exit(1)
-    else if (isOpen()):
-        message = []
-        process_list = subprocess.run(['ps', '-eo', 'comm='], capture_output=True, text=True).stdout
-        
-        for line in process:
-            message.append([line.strip(),random.randint(1,7)])
-        
+   
 
-        s.send(message.encode())
-    else:
-        sys.exit(1)
+
+    process_list = subprocess.run(['ps', '-eo', 'comm='], capture_output=True, text=True).stdout
+        
+    for line in process:
+        message = [line.strip(),random.randint(1,5)]
+        s.send(message..encode())
 
 ##main END
 

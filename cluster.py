@@ -6,7 +6,7 @@ import sys
 #host = '127.0.0.1'
 #port = sys.argv[1]
 #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#queue = []
+queue = []
 lock = threading.lock()
 semaphore = threading.Semaphore(value=2)
 
@@ -17,20 +17,28 @@ def consumer(num):
 
 ##consumer END
 
-def producer(num):
-    print()
+def producer(): 
+    while True:
+        
+        ##Listen for message
+        ##Store the tuple in queue
+        queue.sort(key=shortestJobFirst())
 
 ##producer END
 
+def shortestJobFirst(e):
+    return e[1] ##Return second element of the tuple (execution time)
+
 
 def main():
-    #s.bind(host,8080)
+    #s.bind(host,port)
     #s.listen(5)
 
         #while True
             #clientSocket, address = s.accept()
             #print(f"Connection estavlished from address {address}")    
 
+    
 
     threads = []
 
