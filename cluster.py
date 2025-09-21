@@ -12,8 +12,15 @@ semaphore = threading.Semaphore(value=2)
 
 
 
-def consumer(num):
-    print()
+def consumer():
+	proc_table = []
+	while True:
+		lock.acquire() ##Critical region start
+		process = queue[0]
+		queue.pop(1)
+		lock.release() ##Critical region end
+		proc_table.append(process)
+		time.sleep(process[1])
 
 ##consumer END
 
@@ -37,8 +44,6 @@ def main():
         #while True
             #clientSocket, address = s.accept()
             #print(f"Connection estavlished from address {address}")    
-
-    
 
     threads = []
 
@@ -64,10 +69,10 @@ def main():
 
 if __name__ == "__main__":
     ##Check to see if program is run with the correct amount of arguments
-    #if len(sys.argv) == 2:
-    main(port)
-    #else:
-    ##Disclose correct usage of program
-       # print("Usage: python3 cluster.py <port_number>")
-       # sys.exit(1)
+    if len(sys.argv) == 2:
+    	main(port)
+    else:
+    	##Disclose correct usage of program
+        print("Usage: python3 cluster.py <port_number>")
+        sys.exit(1)
 
