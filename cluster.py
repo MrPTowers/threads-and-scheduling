@@ -1,38 +1,65 @@
-import logging
 import threading
 import time
+import socket
+import sys
+
+#host = '127.0.0.1'
+#port = sys.argv[1]
+#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#queue = []
+lock = threading.lock()
+semaphore = threading.Semaphore(value=2)
 
 
-def consumer(cond):
-    """wait for the condition and use the resource"""
-    logging.debug('Starting consumer thread')
-    with cond:
-        cond.wait()
-        logging.debug('Resource is available to consumer')
+
+def consumer(num):
+    print()
+
+##consumer END
+
+def producer(num):
+    print()
+
+##producer END
 
 
-def producer(cond):
-    """set up the resource to be used by the consumer"""
-    logging.debug('Starting producer thread')
-    with cond:
-        logging.debug('Making resource available')
-        cond.notifyAll()
+def main():
+    #s.bind(host,8080)
+    #s.listen(5)
+
+        #while True
+            #clientSocket, address = s.accept()
+            #print(f"Connection estavlished from address {address}")    
 
 
-threads = []
-condition = threading.Condition()
-c1 = threading.Thread(name='c1', target=consumer,
-                      args=(condition,))
-c2 = threading.Thread(name='c2', target=consumer,
-                      args=(condition,))
-p = threading.Thread(name='p', target=producer,
-                     args=(condition,))
-threads.append(c1)
-threads.append(c2)
-threads.append(p)
+    threads = []
 
-for t in threads:
-	t.start()
+    c1 = threading.Thread(name='c1', target=consumer, args=(i,))
+    c2 = threading.Thread(name='c2', target=consumer, args=(i,))
+    p = threading.Thread(name='p', target=producer, args=(i,))
 
-for t in threads:
-	t.join()
+    threads.append(c1)
+    threads.append(c2)
+    threads.append(p)
+
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()
+    #else:
+     #   sys.exit(1)
+      #  socket.close()
+
+##main END
+
+
+if __name__ == "__main__":
+    ##Check to see if program is run with the correct amount of arguments
+    #if len(sys.argv) == 2:
+    main(port)
+    #else:
+    ##Disclose correct usage of program
+       # print("Usage: python3 cluster.py <port_number>")
+       # sys.exit(1)
+
