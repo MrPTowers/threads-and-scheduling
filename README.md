@@ -52,7 +52,7 @@ finished and waits to receive the response of the finished execution.
 ---
 People:
 1. Uriel Fuentes: Offered insight on edevice message parsing and subprocess library use
-2. Gabriel Roman: Explained semaphore use cases for the project
+2. Gabriel Romero: Explained semaphore use cases for the project
 
 Online:
 1. https://stackoverflow.com/questions/7749341/basic-python-client-socket-example
