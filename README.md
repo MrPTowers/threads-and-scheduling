@@ -1,17 +1,17 @@
 # threads-and-scheduling
-
-## Pablo Torres Arroyo
+### Pablo Torres Arroyo
 ### 801-19-7744
 ### 23/09/2025
----
+
+
 ### Libraries used:
 ---
-1. Threading: Threads, locks, and semaphores
-2. Subprocess: Run terminal commands
-3. Time: Sleep library
-4. Random: Randomization for sleep times
-5. Socket: Server setup and client-server communication
-6. Sys: Capture program parameter
+1. **Threading**: Threads, locks, and semaphores
+2. **Subprocess**: Run terminal commands
+3. **Time**: Sleep library
+4. **Random**: Randomization for sleep times
+5. **Socket**: Server setup and client-server communication
+6. **Sys**: Capture program parameter
 
 ### How to Run
 ---
