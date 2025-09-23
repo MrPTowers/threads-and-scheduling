@@ -1,7 +1,7 @@
 # threads-and-scheduling
- Pablo Torres Arroyo
- 801-19-7744
- 23/09/2025
+ Pablo Torres Arroyo  
+ 801-19-7744  
+ 23/09/2025  
 
 
 ### Libraries used:
