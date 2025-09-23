@@ -51,7 +51,7 @@ finished and waits to receive the response of the finished execution.
 ### Sources consulted
 ---
 People:
-1. Uriel Fuentes: Offered insight edevice message parsing and subprocess library use
+1. Uriel Fuentes: Offered insight on edevice message parsing and subprocess library use
 2. Gabriel Roman: Explained semaphore use cases for the project
 
 Online:
