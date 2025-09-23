@@ -17,14 +17,13 @@ def main():
 
     for line in process_list: #Send individual message for each line in process_list
         msg = f"{line.strip()},{random.randint(sleep_time_range[0],sleep_time_range[1])}"
-        print(msg)
         s.send(msg.encode())
         time.sleep(random.randint(execution_time_range[0],execution_time_range[1]))
 
     time.sleep(5)
     s.send("done".encode()) #Send final message to indicate end
     while True:
-        data = s.recv(1024) #Receive and display final result
+        data = s.recv(16384) #Receive and display final result
         if not data:
             continue
         print(f"\nMessage received:\n {data.decode()}")
