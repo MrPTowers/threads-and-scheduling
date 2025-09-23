@@ -6,6 +6,8 @@ import time
 
 host = sys.argv[1]
 port = int(sys.argv[2]) #Program parameters
+execution_time_range = [1,5]
+sleep_time_range = [1,5]
 
 def main(): 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,10 +16,10 @@ def main():
     process_list = subprocess.run(['ps', '-eo', 'comm='], capture_output=True, text=True).stdout.splitlines() #Collect names of all running processes
 
     for line in process_list: #Send individual message for each line in process_list
-        msg = f"{line.strip()},{random.randint(1,5)}"
+        msg = f"{line.strip()},{random.randint(sleep_time_range[0],sleep_time_range[1])}"
         print(msg)
         s.send(msg.encode())
-        time.sleep(random.randint(1,5))
+        time.sleep(random.randint(execution_time_range[0],execution_time_range[1]))
 
     time.sleep(5)
     s.send("done".encode()) #Send final message to indicate end
