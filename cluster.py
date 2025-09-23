@@ -104,14 +104,11 @@ def main():
         results += f"Consumer {cid} spent {execution_times[cid]} seconds of CPU time\n"
         results += "---\n"
 
-
-
     clientSocket.sendall(results.encode()) #Send message back to edevice.
     clientSocket.close()
     s.close() #Close both connections
 
 #main END
-
 
 if __name__ == "__main__":
     #Check to see if program is run with the correct amount of arguments
