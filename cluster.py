@@ -56,7 +56,7 @@ def producer(clientSocket):
         queue.sort(key=shortestJobFirst)
         lock.release() #Critical region end
         full_slots.release() #Up full slots.
-        time.sleep(job[1])
+        time.sleep(0.5)
     global producer_done
     lock.acquire() #Critical region start (Signal completion)
     producer_done = True #After loop ends, change flag to true
