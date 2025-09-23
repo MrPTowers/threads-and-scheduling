@@ -61,3 +61,17 @@ Based the initial socket server setup on this.
 Learned basic python threading syntax
 3. https://docs.python.org/3/library/subprocess.html#subprocess.Popen
 Informed the usage of the subprocess library
+
+### Potential Improvements
+---
+1. Input validation: Currently, the program has no validation on the message contents and 
+simply assumes that the messages will always arrive with the correct format
+2. Dynamic message size: The edevice receives up to 16384 bytes of data. If the response 
+from the cluster is longer, it cuts it. It could be changed to an implementation where the 
+edevice continues receiving until it finds an identifies that signifies the end of the message.
+3. Synchronous objects: Objects such a threading.Event would simplify the code and require
+less uses of the semaphores and lock. Importing the queue library would also largely simplify
+the code.
+4. Different problem: This code can serve as a basis for a more complicated problem that
+better utilizes the use case of multithreading 
+
