@@ -70,6 +70,7 @@ def producer(clientSocket):
 def shortestJobFirst(e):
     return e[1] #Return second element of the tuple (execution time)
 
+# shortestJobFirst END
 
 def main():
     s.bind((host,port)) 
