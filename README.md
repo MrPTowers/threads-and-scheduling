@@ -1,8 +1,8 @@
 # threads-and-scheduling
 
 ## Pablo Torres Arroyo
-## 801-19-7744
-## 23/09/2025
+### 801-19-7744
+### 23/09/2025
 ---
 ### Libraries used:
 ---
@@ -50,11 +50,11 @@ finished and waits to receive the response of the finished execution.
 
 ### Sources consulted
 ---
-- People:
+People:
 1. Uriel Fuentes: Offered insight edevice message parsing and subprocess library use
 2. Gabriel Roman: Explained semaphore use cases for the project
 
-- Online:
+Online:
 1. https://stackoverflow.com/questions/7749341/basic-python-client-socket-example
 Based the initial socket server setup on this.
 2. https://www.geeksforgeeks.org/python/synchronization-by-using-semaphore-in-python/
